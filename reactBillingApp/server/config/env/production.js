@@ -2,11 +2,17 @@
 
 module.exports = {
 	db: {
-		uri: process.env.MONGOHQ_URL || process.env.MONGOLAB_URI || 'mongodb://' + (process.env.DB_1_PORT_27017_TCP_ADDR || 'localhost') + '/reactdb',
-		options: {
-			user: '',
-			pass: ''
-		}
+		uri: process.env.MONGOLAB_URI ||'mongodb://groupproject:imaginary123@ds043972.mlab.com:43972/billingapp'||'mongodb://localhost/billing'  ,
+		// options: {
+		// 	user: '',
+		// 	pass: ''
+		// }
+				//*****
+		//   uri: 'mongodb://ds043972.mlab.com:43972/billingapp',
+		//   options: {
+		// 	user: 'groupproject',
+		// 	pass: 'imaginary123'
+		// }
 	},
 
 	facebook: {

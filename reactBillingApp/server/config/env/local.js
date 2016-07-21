@@ -8,12 +8,14 @@
 
 module.exports = {
 	db: {
+		// //****
 		// uri: 'mongodb://localhost/billing',
-		  uri: mongodb://ds011775.mlab.com:11775/heroku_mrt8lrx2,
-		  options: {
-			user: 'groupproject',
-			pass: 'imaginary123'
-		}
+		// 		  options: {
+		// 	user: '',
+		// 	pass: ''
+		// }
+		//*****
+		  uri: 'mongodb://groupproject:imaginary123@ds011775.mlab.com:11775/heroku_mrt8lrx2'
 	}
 	// facebook: {
 	// 	clientID: process.env.FACEBOOK_ID || 'APP_ID',
@@ -22,3 +24,4 @@ module.exports = {
 	// }
 };
 
+//mongodb://groupproject:imaginary123@ds011775.mlab.com:11775/heroku_mrt8lrx2

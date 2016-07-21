@@ -2,7 +2,7 @@
 
 module.exports = {
 	db: {
-		uri: 'mongodb://localhost/reactdb-test',
+		uri: 'mongodb://localhost/billing',
 		options: {
 			user: '',
 			pass: ''

@@ -2,12 +2,16 @@
 
 module.exports = {
 	db: {
-		//add mongo instance and password here
-		uri: 'mongodb://localhost/biller',
-		options: {
-			user: '',
-			pass: ''
-		}
+		uri: process.env.MONGOLAB_URI ||'mongodb://localhost/billing' ||'mongodb://groupproject:imaginary123@ds043972.mlab.com:43972/billingapp' ,
+		// 		  options: {
+		// 	user: '',
+		// 	pass: ''
+		// }
+		//   uri: 'mongodb://ds043972.mlab.com:43972/billingapp',
+		//   options: {
+		// 	user: 'groupproject',
+		// 	pass: 'imaginary123'
+		// }
 	},
 
 	//options for authentication through 3rd party
@@ -53,3 +57,4 @@ module.exports = {
 		bucket: process.env.S3_BUCKET_NAME
 	}
 };
+
