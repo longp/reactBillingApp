@@ -7,6 +7,7 @@ var buffer = require('vinyl-buffer');
 var reactify = require('reactify');
 var babelify = require('babelify');
 var mocha = require('gulp-mocha');
+var util = require('gulp-util');
 var gulpJsx = require('gulp-jsx-coverage');
 var uglify = require('gulp-uglify');
 var isWatching = false;
@@ -18,7 +19,9 @@ gulp.on('stop', function() {
        });
    }
 });
-
+gulp.task('greet', function() {
+  console.log(chalk.red.bold('Greetings, gulpfile has started!'));
+});
 gulp.task('env-set', function() {
   var env = process.argv[3];
   if (env == '--production') {
@@ -147,7 +150,7 @@ babel: {                                         // will pass to babel-core
 
 gulp.task('test', ['env:test', 'test_cover']);
 
-gulp.task('serve', ['env-set', 'live-server', 'bundle', 'temp', 'observe-all'], function() {
+gulp.task('serve', ['greet', 'env-set', 'live-server', 'bundle', 'temp', 'observe-all'], function() {
   browserSync.init(null, {
     proxy: 'http://localhost:3000',
     port: 9001,
