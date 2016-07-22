@@ -1,25 +1,30 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var ArticleSchema = {
+var LogSchema = {
 
   title: {
     type: String,
     default: '',
     trim: true,
-    required: 'Title required'
+    required: [true, 'Title required' ]
   },
 
   content: {
     type: String,
     default: '',
     trim: true,
-    required: 'Content required'
+    required: [true, 'Content required']
 
   },
 
   user: {
-    type: Schema.ObjectId,
+    type: Schema.Types.ObjectId,
     ref: 'User'
+  },
+
+  consumer:{
+    type: Schema.Types.ObjectId,
+    ref: 'Consumer'
   },
 
   created: {
@@ -28,5 +33,5 @@ var ArticleSchema = {
   }
 }
 
-var Article = mongoose.model('Article', ArticleSchema, 'articles');
-module.exports = Article;
+var Log = mongoose.model('Log', LogSchema, 'Logs');
+module.exports = Log;

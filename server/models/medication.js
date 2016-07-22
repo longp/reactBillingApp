@@ -1,30 +1,35 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
+var MedicationSchema = {
 
-var medicationSchema = {
-
-times: { 
- type: String,
- default: '',  
- trim: true 
-}, 
-
-  frequency: {
-    type: String
+  name: {
+    type: String,
+    default: '',
+    trim: true,
+    required: [true, 'Content required']
   },
-  drugname: {
-    type: String
-  },
+
   dosage: {
-    type: String
+    type: String,
+    default: '',
+    trim: true,
+    required: [true, 'Content required']
+
   },
-  route: {
-    type: String
-  },
+
   times: {
-    type: String
-  }
+    type: String,
+    default: '',
+    trim: true,
+    required: [true, 'Content required']
+  },
+
+  route: {
+    type: String,
+    default: 'oral',
+    trim: true,
+    required: [true, 'Content required']
 }
 
-var medication = mongoose.model('medication', medicationSchema,'medications');
-module.exports = medication;
+var Medication = mongoose.model('Medication', MedicationSchema, 'Medications');
+module.exports = Medication;

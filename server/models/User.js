@@ -30,14 +30,14 @@ var UserSchema = new Schema({
         type: String,
         trim: true,
         default: '',
-        required: 'First Name required'
+        required: [true, 'first name required']
       },
 
     lastName: {
         type: String,
         trim: true,
         default: '',
-        required: 'Last Name required'
+        required: [true, 'last name required']
       },
 
     displayName: {
@@ -54,7 +54,7 @@ var UserSchema = new Schema({
     username: {
         type: String,
         trim: true,
-        required: 'User Name required'
+        required: [true, 'username required']
     },
     photo: {
         type: String,
@@ -87,7 +87,7 @@ var UserSchema = new Schema({
     },
     provider: {
         type: String,
-        required: 'Provider is required'
+        required: [true, 'provider required']
     },
     providerData: {},
     additionalProvidersData: {},
