@@ -56,6 +56,14 @@ var UserSchema = new Schema({
         trim: true,
         required: [true, 'username required']
     },
+    consumer: [{
+      type: Schema.Types.ObjectId,
+      ref: 'Consumer'
+    }],
+    article: [{
+      type: Schema.Types.ObjectId,
+      ref: 'Article'
+    }],
     photo: {
         type: String,
         default: 'http://www.ee-ip.org/sites/default/files/default_images/default-user.png',

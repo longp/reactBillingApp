@@ -8,6 +8,7 @@ var reactify = require('reactify');
 var babelify = require('babelify');
 var mocha = require('gulp-mocha');
 var util = require('gulp-util');
+var chalk = require('chalk');
 var gulpJsx = require('gulp-jsx-coverage');
 var uglify = require('gulp-uglify');
 var isWatching = false;

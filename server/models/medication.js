@@ -29,7 +29,8 @@ var MedicationSchema = {
     default: 'oral',
     trim: true,
     required: [true, 'Content required']
+  }
 }
 
-var Medication = mongoose.model('Medication', MedicationSchema, 'Medications');
+var Medication = mongoose.model('Medication', MedicationSchema);
 module.exports = Medication;

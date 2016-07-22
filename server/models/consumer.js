@@ -9,6 +9,10 @@ var ConsumerSchema = {
    type: String,
    trim: true,
   },
+  phone_number: {
+    type: String,
+    trim: true
+  },
   dob: {
     type: Date,
   }
@@ -16,21 +20,25 @@ var ConsumerSchema = {
     type: Date,
     default: Date.now
   }
-  user: {
+  user: [{
     type: Schema.Types.ObjectId,
     ref: 'User'
-  },
+  }],
   medication: [{
     type: Schema.Types.ObjectId,
     ref: 'Medication'
   }],
-  log:[{
+  article:[{
     type: Schema.Types.ObjectId,
-    ref: 'Log'
+    ref: 'Article'
   }],
   location: {
     type: Schema.Types.ObjectId,
     ref: 'Location'
+  },
+  bill:{
+    type: Schema.Types.ObjectId,
+    ref: 'Bill'
   }
 
 }

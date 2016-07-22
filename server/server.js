@@ -15,9 +15,9 @@ var db = mongoose.connect(uri,function(){
 require('./models/Article.js');
 require('./models/User.js');
 require('./models/location.js');
-require('./models/servicerecipient.js');
-require('./models/rate.js');
-require('./models/medication.js');
+// require('./models/servicerecipient.js');
+// require('./models/rate.js');
+require('./models/Medication.js');
 var app = require('./express.js')(db);
 
 // Bootstrap passport config
